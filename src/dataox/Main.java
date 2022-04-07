@@ -3,6 +3,7 @@ package dataox;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Dispatcher dispatcher = new Dispatcher();
+        dispatcher.moveElevator();
     }
 }
