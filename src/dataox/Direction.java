@@ -1,5 +1,5 @@
 package dataox;
 
 public enum Direction {
-    UP, DOWN, STOPPED;
+    UP, DOWN, STOPPED
 }

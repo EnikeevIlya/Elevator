@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Elevator {
-    private final Floor currentFloor;
     private int finalFloorNumber;
     private Direction directionElevator;
     private final List<Passenger> passengersAreInElevator = new ArrayList<>();
@@ -14,7 +13,6 @@ public class Elevator {
     private int passengersInElevatorCount;
 
     public Elevator(Floor currentFloor) {
-        this.currentFloor = currentFloor;
         passengersInElevatorCount = 0;
         finalFloorNumber = setFinalFloorNumber();
         directionElevator = Direction.UP;
@@ -53,9 +51,9 @@ public class Elevator {
     }
 
     public int setFinalFloorNumber() {
-        for (int i = 0; i < passengersAreInElevator.size(); i++) {
-            if (finalFloorNumber < passengersAreInElevator.get(i).getNeededFloor()) {
-                finalFloorNumber = passengersAreInElevator.get(i).getNeededFloor();
+        for (Passenger passenger : passengersAreInElevator) {
+            if (finalFloorNumber < passenger.getNeededFloor()) {
+                finalFloorNumber = passenger.getNeededFloor();
             }
         }
         return finalFloorNumber;
